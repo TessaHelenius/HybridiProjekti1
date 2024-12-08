@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HybridiProjekti.ViewModels"
+             xmlns:local="clr-namespace:HybridiProjekti"
+             x:Class="HybridiProjekti.Views.ItemsListPage"
+             x:DataType="vm:ItemListViewModel"
+             Title="Ostoslista"
+             BindingContext="{x:Static local:App.MainViewModel}" >
+    <StackLayout>
+        <Button
+        Text="Tietoja sovelluksesta"
+        Style="{StaticResource MyButtonStyle}"
+        Clicked="About_Button_Clicked" />
+        <ListView ItemsSource="{Binding Items}" Margin="10" ItemTapped="ListView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="vm:ItemViewModel">
+                    <ViewCell>
+                        <Grid Padding="10" ColumnDefinitions="Auto, *, Auto">
+
+                            <CheckBox Grid.Column="0" />
+                            <Label Grid.Column="1" 
+                                   Text="{Binding Name}" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="StartAndExpand" />
+                            <ImageButton Grid.Column="2" 
+                                         Source="delete_icon.png"
+                                         Clicked="Delete_Button_Clicked"
+                                         CommandParameter="{Binding .}" />
+
+                            <Label Grid.Column="1"
+                                   Text="{Binding Quantity}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="End" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <HorizontalStackLayout Spacing="10" Padding="10" HorizontalOptions="Center">
+            <Button Text="Lisää tuote" Style="{StaticResource MyButtonStyle}" Clicked="Add_Button_Clicked" HorizontalOptions="FillAndExpand" />
+            <Button Text="Tallenna tuotteet" Style="{StaticResource MyButtonStyle}" Clicked="Save_Button_Clicked" HorizontalOptions="FillAndExpand" />
+        </HorizontalStackLayout>
+    </StackLayout>
+</ContentPage>

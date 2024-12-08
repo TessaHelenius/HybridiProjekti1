@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HybridiProjekti.Views.AddItemPage"
+             Title="Ostoslista">
+    <VerticalStackLayout Spacing="0" Margin="0" Padding="0">
+        <Label
+            Text="Lisää ostoksia listalle"
+            Style="{StaticResource MyLabelStyle}"
+            />
+        <Entry x:Name="entry"
+                Placeholder="Kirjoita tähän tuote jonka haluat lisätä"
+                TextChanged="Entry_TextChanged"
+                Completed="Entry_Completed"/>
+        <Entry
+        x:Name="quantityEntry"
+        Placeholder="Anna tuotteen määrä (esim. 1)"
+        Keyboard="Numeric" />
+        <Picker
+        x:Name="categoryPicker"
+        Title="Valitse kategoria" />
+        <Image x:Name="PhotoImage" HeightRequest="300" WidthRequest="300"/>
+        <Button
+        Text="Ota kuva"
+                Style="{StaticResource MyButtonStyle}"
+            Clicked="Photo_Button_Clicked"/>
+        <Button
+            Text="Lisää tuote"
+                Style="{StaticResource MyButtonStyle}"
+            Clicked="Add_Button_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>

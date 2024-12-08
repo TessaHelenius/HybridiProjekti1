@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:HybridiProjekti.ViewModels"
+             x:DataType="vm:ItemViewModel"
+             x:Class="HybridiProjekti.Views.ItemDetailPage"
+             Title="Ostoslista">
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding Id, StringFormat='ID: {0}'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label 
+             Text="{Binding Name}"
+             VerticalOptions="Center" 
+             HorizontalOptions="Center" />
+        <Label
+             Text="{Binding Quantity, StringFormat='{0} kpl'}"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+        <Label
+             Text="{Binding Category}"
+             VerticalOptions="Center"
+             HorizontalOptions="Center" />
+        <Image Source="{Binding ImagePath}" />
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,33 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Hei, maailma!",
+    "ImagePath": "dotnet_bot.png"
+  },
+
+  {
+    "Id": 2,
+    "Name": "Tere tere!",
+    "ImagePath": "dotnet_bot.png"
+    
+  },
+  {
+    "Id": 3,
+    "Name": "Who dis?",
+    "ImagePath": "dotnet_bot.png"
+    
+  },
+  {
+    "Id": 4,
+    "Name": "Halojata halloo!",
+    "ImagePath": "dotnet_bot.png"
+    
+  },
+  {
+    "Id": 5,
+    "Name": "TGIF!",
+    "ImagePath": "dotnet_bot.png"
+    
+  }
+
+]
